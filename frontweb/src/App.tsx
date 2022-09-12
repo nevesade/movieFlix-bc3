@@ -1,9 +1,9 @@
-
 import './App.css';
+import './assets/styles/custom.scss';
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <h1>Hello Dev</h1>
     </div>
   );

@@ -1,0 +1,20 @@
+.main-nav {
+    min-height: 68px;
+    padding: 0 49px;
+}
+
+.nav-logo-text h4 {
+    color: #000000;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.015em;
+
+}
+
+.nav-logo a,
+a:hover {
+    text-decoration: none;
+    color: #000000;
+}

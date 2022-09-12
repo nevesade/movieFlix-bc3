@@ -1,0 +1,50 @@
+.home-container {
+    border: 1px solid red;
+   height: 90vh;
+}
+
+.banner-card {
+    border: 1px solid yellow;
+    
+}
+
+.banner-content-container {
+    border: 1px solid red;
+    margin-top: 81px;
+}
+
+.banner-content-container h1 {
+
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    letter-spacing: -0.015em;
+
+}
+
+.banner-content-container p {
+
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+    letter-spacing: -0.015em;
+    color: #F2F2F2;
+    width: 320px;
+    height: 60px;
+    margin-top: 19px;
+    margin-bottom: 52px;
+}
+.banner-image-container  {
+    width: 100%;
+    border: 1px solid greenyellow;
+}
+
+.banner-image-container  svg {
+    
+    border: 1px solid greenyellow;
+    
+    
+    
+}

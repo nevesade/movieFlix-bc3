@@ -1,5 +1,5 @@
 .home-container {
-    border: 1px solid rgb(249, 51, 226);
+    
     height: 90vh;
     display: flex;
     justify-content: space-around;
@@ -7,13 +7,13 @@
 }
 
 .banner-card {
-    border: 1px solid yellow;
+    
     display: none;
 
 }
 
 .banner-content-container {
-    border: 1px solid rgb(42, 7, 238);
+    
     margin-top: 81px;
 }
 
@@ -43,12 +43,12 @@
 
 .banner-image-container {
     width: 100%;
-    border: 1px solid greenyellow;
+    
 }
 
 .banner-image-container svg {
 
-    border: 1px solid greenyellow;
+    
     width: 100%;
 
 
@@ -57,7 +57,8 @@
 
 .login-container {
     width: 100%;
-    border: 1px solid red;
+    
+    
 }
 
 @media (min-width: 576px) {

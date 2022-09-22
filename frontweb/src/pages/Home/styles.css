@@ -1,15 +1,19 @@
 .home-container {
-    border: 1px solid red;
+    border: 1px solid rgb(249, 51, 226);
    height: 90vh;
+   display: flex;
+   justify-content: space-around;
+   padding: 17px;
 }
 
 .banner-card {
     border: 1px solid yellow;
+    display: none;
     
 }
 
 .banner-content-container {
-    border: 1px solid red;
+    border: 1px solid rgb(42, 7, 238);
     margin-top: 81px;
 }
 
@@ -48,3 +52,28 @@
     
     
 }
+
+.login-container {
+    width: 100%;
+}
+
+@media (min-width: 576px) { 
+    .login-container {
+        width: 479px;
+    }
+
+}
+
+
+
+@media (min-width: 1200px) { 
+    .banner-card {
+        
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+}
+   
+    

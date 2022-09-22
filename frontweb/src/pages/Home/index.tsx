@@ -2,6 +2,7 @@ import {ReactComponent as MainImage} from 'assets/images/main-image.svg';
 import './styles.css';
 
 import Navbar from "components/Navbar";
+import Login from './Login';
 
 const Home = () => {
     return (
@@ -17,6 +18,10 @@ const Home = () => {
               <div className='banner-image-container'>
                   <MainImage/>
               </div>
+          </div>
+
+          <div className='login-container'>
+            <Login/>
           </div>
         </div>
       </>

@@ -3,7 +3,7 @@ import './styles.css';
 
 const Reviewform = () => {
   return (
-    <div className=' review-card review-form-card '>
+    <div className='  review-card review-form-card '>
       <form>
         
         <div className=" mb-2 input-review">
@@ -15,7 +15,7 @@ const Reviewform = () => {
           />
         </div>
         
-        <div className="review-submit container">
+        <div className="review-submit  ">
          <ButtonIcon text=' SALVAR AVALIAÇÃO'/>
         </div>
         

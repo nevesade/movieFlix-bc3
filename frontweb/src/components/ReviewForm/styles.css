@@ -1,46 +1,38 @@
 .review-form-card {
     margin-top: 49px;
     margin-bottom: 29px;
-    height: 175px;
-    
-   padding: 17px;
-   
-   
-
-   
-
+    height: 180px;
+    padding: 17px;
 
 
 }
 
-/* .input-review {
+
+
+
+.input-review input {
     margin-top: 24px;
     background: #FFFFFF;
     border: 1px solid #E1E1E1;
     border-radius: 4px;
-} */
-
-
-.input-review input{
-    margin-top: 24px;
-    background: #FFFFFF; 
-    border: 1px solid #E1E1E1;
-    border-radius: 4px;
-    color: #9E9E9E ;
+    color: #9E9E9E;
     height: 50px;
 }
 
 
-.review-submit {
+.review-form-card .review-submit {
+    display: flex;
+    justify-content: center;
+}
+
+
+.review-submit .btn-container {
     height: 50px;
     width: 334px;
-    left: 397px;
-    top: 91px;
-    
+    border-radius: 4px;
     margin-bottom: 28px;
     margin-top: 17px;
-    
-    
+
 }
 
 .review-submit button {
@@ -49,9 +41,53 @@
     line-height: 27px;
     color: #000000;
     mix-blend-mode: normal;
-    
-   
-    
+
+
+
 }
 
 
+@media (min-width: 320px) {
+    .review-submit .btn-container {
+
+        width: 100%;
+
+        font-size: 16px;
+
+
+    }
+
+    .review-submit button h1 {
+
+        font-size: 24px;
+    }
+
+    .review-submit button h6 {
+
+        font-size: 16px;
+    }
+
+
+}
+
+
+@media (min-width: 576px) {
+    .review-submit .btn-container {
+
+        height: 50px;
+        width: 334px;
+
+    }
+
+    .review-submit button h6 {
+
+        font-size: 20px;
+    }
+
+    .review-submit button h1 {
+
+        font-size: 44px;
+    }
+
+
+}

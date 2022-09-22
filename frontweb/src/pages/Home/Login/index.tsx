@@ -1,6 +1,7 @@
 
 
  
+import ButtonIcon from 'components/Navbar/ButtonIcon';
 import './styles.css';
  
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
         </div>
         
         <div className="login-submit">
-          <button>Fazer login</button>
+         <ButtonIcon text='Fazer Login'/>
         </div>
         
       </form>

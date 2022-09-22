@@ -1,0 +1,33 @@
+.movies-container {
+
+    border: 1px solid red;
+    
+
+}
+
+.movies-title-container h1 {
+    margin-bottom: 39px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 65px;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+}
+
+.movie-content a {
+    
+
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+    text-decoration: none;
+    mix-blend-mode: normal;
+    display: block;
+    margin-bottom: 27px;
+
+
+
+}

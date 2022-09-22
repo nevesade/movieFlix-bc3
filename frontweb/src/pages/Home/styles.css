@@ -1,15 +1,15 @@
 .home-container {
     border: 1px solid rgb(249, 51, 226);
-   height: 90vh;
-   display: flex;
-   justify-content: space-around;
-   padding: 17px;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    padding: 17px;
 }
 
 .banner-card {
     border: 1px solid yellow;
     display: none;
-    
+
 }
 
 .banner-content-container {
@@ -40,24 +40,27 @@
     margin-top: 19px;
     margin-bottom: 52px;
 }
-.banner-image-container  {
+
+.banner-image-container {
     width: 100%;
     border: 1px solid greenyellow;
 }
 
-.banner-image-container  svg {
-    
+.banner-image-container svg {
+
     border: 1px solid greenyellow;
-    
-    
-    
+    width: 100%;
+
+
+
 }
 
 .login-container {
     width: 100%;
+    border: 1px solid red;
 }
 
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
     .login-container {
         width: 479px;
     }
@@ -66,14 +69,16 @@
 
 
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
     .banner-card {
-        
         display: flex;
         flex-direction: column;
-        
     }
 
+    .login-container {
+       margin-top: 38px;
+    }
+
+
+
 }
-   
-    

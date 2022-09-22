@@ -1,7 +1,7 @@
 
 
  
-import ButtonIcon from 'components/Navbar/ButtonIcon';
+import ButtonIcon from 'components/ButtonIcon';
 import './styles.css';
  
 const Login = () => {

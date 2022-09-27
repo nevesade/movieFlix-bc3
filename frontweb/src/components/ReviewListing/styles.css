@@ -1,0 +1,43 @@
+.review-card {
+
+    background: #6C6C6C;
+}
+
+.review-form-card {
+    margin-top: 49px;
+    margin-bottom: 29px;
+    height: auto;
+    padding: 17px;
+    
+
+
+}
+
+.review-text {
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    padding: 13px 19px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+
+}
+
+
+.review-list h6 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+
+    mix-blend-mode: normal;
+}

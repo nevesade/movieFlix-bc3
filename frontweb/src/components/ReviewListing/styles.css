@@ -4,11 +4,11 @@
 }
 
 .review-form-card {
-    margin-top: 49px;
+    margin-top: 19px;
     margin-bottom: 29px;
     height: auto;
     padding: 17px;
-    
+
 
 
 }
@@ -40,4 +40,16 @@
     color: #FFFFFF;
 
     mix-blend-mode: normal;
+}
+
+
+
+@media (min-width: 320px) {
+
+    .review-list h5 {
+        font-size: 15px;
+        line-height: 22px;
+        text-align: justify;
+    }
+
 }

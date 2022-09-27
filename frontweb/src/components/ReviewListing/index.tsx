@@ -7,12 +7,9 @@ const ReviewListing = () => {
     <div className='  review-card review-form-card '>
 
         
-        <div className=" mb-2 review-list ">
-            <h6> <span> <Stars/> </span> Maria Silva</h6>
-            
-            <h5 className='review-text '>
-                Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-            </h5>
+        <div className="  review-list ">
+
+            <div className='mb-3'>
 
             <h6> <span> <Stars/> </span> Maria Silva</h6>
             
@@ -20,11 +17,8 @@ const ReviewListing = () => {
                 Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
             </h5>
 
-            <h6> <span> <Stars/> </span> Maria Silva</h6>
-            
-            <h5 className='review-text '>
-                Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-            </h5>
+            </div>
+            <div className='mb-3'>
 
             <h6> <span> <Stars/> </span> Maria Silva</h6>
             
@@ -32,17 +26,36 @@ const ReviewListing = () => {
                 Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
             </h5>
 
-            <h6> <span> <Stars/> </span> Maria Silva</h6>
-            
-            <h5 className='review-text '>
-                Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
-            </h5>
+            </div>
+            <div className='mb-3'>
 
             <h6> <span> <Stars/> </span> Maria Silva</h6>
             
             <h5 className='review-text '>
                 Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
             </h5>
+
+            </div>
+            <div className='mb-3'>
+
+            <h6> <span> <Stars/> </span> Maria Silva</h6>
+            
+            <h5 className='review-text '>
+                Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
+            </h5>
+
+            </div>
+            <div className='mb-3'>
+
+            <h6> <span> <Stars/> </span> Maria Silva</h6>
+            
+            <h5 className='review-text '>
+                Gostei muito do filme. Foi muito bom mesmo. Pena que durou pouco.
+            </h5>
+
+            </div>
+            
+
 
         </div>
         

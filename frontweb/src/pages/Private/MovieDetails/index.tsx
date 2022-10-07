@@ -6,7 +6,7 @@ import './styles.css';
 const MovieDetails = () => {
   return (
     <>
-      <Navbar />
+      
       <div className=" container my-4 movies-container">
         <div className="row movie-details-title-container">
           <h1>Tela detalhes do filme id: 1 </h1>

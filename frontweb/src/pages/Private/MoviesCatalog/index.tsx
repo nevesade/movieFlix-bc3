@@ -1,10 +1,10 @@
 import Navbar from 'components/Navbar';
 import './styles.css';
 
-const Movies = () => {
+const MovieCatalog= () => {
   return (
     <>
-      <Navbar />
+      
       <div className=" container my-4 movies-container">
         <div className="row movies-title-container">
           <h1>Tela listagem de filmes</h1>
@@ -25,4 +25,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default MovieCatalog;

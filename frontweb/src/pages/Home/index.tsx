@@ -7,7 +7,7 @@ import Login from './Login';
 const Home = () => {
     return (
       <>
-        <Navbar />
+        
         <div className="home-container container">
           <div className="banner-card">
               <div className='banner-content-container'>

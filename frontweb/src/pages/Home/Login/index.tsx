@@ -1,5 +1,6 @@
 import ButtonIcon from 'components/ButtonIcon';
 import { useForm } from 'react-hook-form';
+import { useLocation, useHistory } from 'react-router-dom';
 import { requestBackendLogin } from 'utils/requests';
 
 import './styles.css';
@@ -9,12 +10,26 @@ type FormData = {
   password: string;
 };
 
+type LocationState = {
+  from: string;
+}
+
 const Login = () => {
+
+  const location = useLocation<LocationState>();
+
+  const { from } = location.state  || { from: { pathname: '/movies' } };
+
+  const history = useHistory();
+
   const { register, handleSubmit } = useForm<FormData>();
+
   const onSubmit = (formData: FormData) => {
+    
     requestBackendLogin(formData)
     .then((response) => {
       console.log('Sucesso', response);
+      history.replace(from)
     })
     .catch(error => {
       console.log('ERRO', error);

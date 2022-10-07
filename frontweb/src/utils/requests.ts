@@ -1,16 +1,11 @@
-import axios, { AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import history from './history';
-import { getAuthData } from './storage';
 
 
 type LoginData = {
     username: string;
     password: string;
 }
-
-
-
 
 
 // const basicHeader = () =>  ' Basic ' + window.btoa(CLIENT_ID + ':' + CLIENT_SECRET);
@@ -65,7 +60,7 @@ axios.interceptors.response.use(function (response) {
     // Do something with response error
     if (error.response.status === 401) {
         //console.log('Redirecionar o usuário para Login');
-        history.push('/admin/auth');
+        history.push('/home');
         //logout();
 
 

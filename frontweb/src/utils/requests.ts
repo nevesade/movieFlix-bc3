@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios, {  AxiosRequestConfig } from 'axios';
 import qs from 'qs';
 import history from './history';
 import { getAuthData } from './storage';
@@ -41,19 +41,18 @@ export const requestBackendLogin = (loginData: LoginData) => {
 
 
 
- 
 export const requestBackend = (config: AxiosRequestConfig) => {
-   /*  const headers = config.withCredentials ? {
+
+    const headers = config.withCredentials ? {
 
         ...config.headers,
         Authorization: " Bearer " + getAuthData().access_token
     } : config.headers;
+    return  axios({...config, baseURL: BASE_URL, headers } ) ;
 
-    return axios({ ...config, baseURL: BASE_URL, headers }); */
-
-    return axios({...config, baseURL: BASE_URL});
+    
 }
- 
+
 
 
 // Add a response interceptor

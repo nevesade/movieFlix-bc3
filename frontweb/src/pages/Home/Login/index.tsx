@@ -99,11 +99,3 @@ const Login = () => {
 };
 
 export default Login;
-
-function register(
-  arg0: string
-): JSX.IntrinsicAttributes &
-  import('react').ClassAttributes<HTMLInputElement> &
-  import('react').InputHTMLAttributes<HTMLInputElement> {
-  throw new Error('Function not implemented.');
-}

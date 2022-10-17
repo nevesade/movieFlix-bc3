@@ -12,6 +12,7 @@ const MovieCatalog= () => {
 
   useEffect(() => {
     const params : AxiosRequestConfig = {
+      method: 'GET',
       url: '/movies',
       withCredentials: true,
       params: {
@@ -22,6 +23,8 @@ const MovieCatalog= () => {
 
     requestBackend(params).then((response) => {
       setPage(response.data);
+      console.log(response)
+
     });
   }, []);
 
@@ -45,6 +48,13 @@ const MovieCatalog= () => {
           </div>
         </div>
       </div>
+
+
+      <div>
+      {page?.content.map((item) => (
+        <p key={item.id}>{item.title}</p>
+      ))}
+    </div>
     </>
   );
 };

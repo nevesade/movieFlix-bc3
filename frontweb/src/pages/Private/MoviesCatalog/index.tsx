@@ -1,13 +1,17 @@
 import { AxiosRequestConfig } from 'axios';
 import Navbar from 'components/Navbar';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { User } from 'types/user';
 import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
+
+
 const MovieCatalog= () => {
+  
   const [page, setPage] = useState<SpringPage<Movie>>();
 
   useEffect(() => {
@@ -39,12 +43,13 @@ const MovieCatalog= () => {
         <div className="row ">
           <div className="movie-content">
             
-              <a href="#">Acessar /movies/1</a>
+              <Link className='link' to="/movies/1">Acessar /movies/1</Link>
+
+              <Link className='link' to="/movies/2">Acessar /movies/2</Link>
           
 
            
-              <a href="#">Acessar /movies/2</a>
-           
+              
           </div>
         </div>
       </div>
@@ -52,7 +57,8 @@ const MovieCatalog= () => {
 
       <div>
       {page?.content.map((item) => (
-        <p key={item.id}>{item.title}</p>
+        <p key={item.id}>{item.title} {item.title}</p>
+       
       ))}
     </div>
     </>

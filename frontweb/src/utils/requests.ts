@@ -59,14 +59,14 @@ export const requestBackend = (config: AxiosRequestConfig) => {
 axios.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    //console.log('A response deu certo');
+    console.log('A response deu certo');
     return response;
 }, function (error) {
     // Any status codes that falls outside the range of 2xx (200) cause this function to trigger
     // Do something with response error
-    if (error.response.status === 401) {
-        //console.log('Redirecionar o usuário para Login');
-        history.push('/home');
+    if (error.response.status === 401  || error.response.status === 403  ) {
+        console.log('Redirecionar o usuário para Login');
+        history.push('/');
         //logout();
 
 

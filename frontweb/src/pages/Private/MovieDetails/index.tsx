@@ -18,7 +18,7 @@ type UrlParams = {
 const MovieDetails = () => {
 
   const { movieId } = useParams<UrlParams>();
-  const [movie, setProduct] = useState<Movie>();
+  const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
    
@@ -31,18 +31,11 @@ const MovieDetails = () => {
     };
 
     requestBackend(params).then((response) => {
-      setProduct(response.data);
+      setMovie(response.data);
       console.log(response)
 
     });
   }, [movieId]);
-
-  
-    
-
-    
-  
- 
 
   return (
     <>
@@ -50,6 +43,7 @@ const MovieDetails = () => {
       <div className=" container my-4 movies-container">
         <div className="row movie-details-title-container">
           <h1>Tela detalhes do filme id:{movie?.id} </h1>
+          
         </div>
       
           <div className=" movie-details-content">

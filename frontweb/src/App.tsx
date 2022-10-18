@@ -1,14 +1,17 @@
-import './App.css';
 import './assets/styles/custom.scss';
+import './App.css';
 import Routes from 'Routes';
+import { useState } from 'react';
+import { AuthContext, AuthContextData } from 'AutContext';
 
-function App() {
+const App = () => {
+ 
+
   return (
-    <>
-      <Routes/>
-      
-    </>
+   
+      <Routes />
+    
   );
-}
+};
 
 export default App;

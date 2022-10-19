@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import { getAuthData } from './storage';
 
-export type Role = 'ROLE_MEMBER'  | 'ROLE_VISTOR';
+export type Role = 'ROLE_MEMBER'  | 'ROLE_VISITOR';
 
 
 export type TokenData = {

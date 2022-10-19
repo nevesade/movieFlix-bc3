@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
 import './styles.css';
 import Login from './Login';
 
 
 const Home = () => {
+
+  useEffect(() => {
+    // Update the document title using the browser API
+    
+  });
+
+  
   return (
     <>
       <div className="home-container container">
@@ -17,9 +24,9 @@ const Home = () => {
             <MainImage />
           </div>
         </div>
-
+         
         <div className="login-container">
-        <Login/>
+          <Login/>
         </div>
       </div>
     </>

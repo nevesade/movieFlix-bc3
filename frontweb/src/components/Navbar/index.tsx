@@ -1,42 +1,37 @@
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { isAuthenticated, getTokenData, TokenData } from 'utils/auth';
+import { isAuthenticated, getTokenData } from 'utils/auth';
 import { removeAuthData } from 'utils/storage';
 import history from 'utils/history';
 import './styles.css';
 import { AuthContext } from 'AutContext';
 
 
-type AuthData = {
-  authenticated: boolean;
-  tokenData?: TokenData;
-};
 
 
 const Navbar = () => {
+  const {authContextData, setAuthContextData } = useContext(AuthContext );
 
-  const [authData, setAuthData] = useState<AuthData>({ authenticated: false });
-
-
+  
 
   useEffect(() => {
     if (isAuthenticated()) {
-      setAuthData({
+      setAuthContextData({
         authenticated: true,
         tokenData: getTokenData(),
       });
     } else {
-      setAuthData({
+      setAuthContextData({
         authenticated: false,
       });
     }
-  }, []);
+  }, [setAuthContextData]);
 
   const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     removeAuthData();
-    setAuthData({
+    setAuthContextData({
       authenticated: false,
     });
     history.replace('/');
@@ -51,7 +46,7 @@ const Navbar = () => {
         </Link>
 
       
-        {authData.authenticated ?  (
+        {authContextData.authenticated ?  (
             <>
                <div className='logout mb-2' >
                 

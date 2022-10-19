@@ -1,7 +1,9 @@
+import { AuthContext } from 'AutContext';
 import ButtonIcon from 'components/ButtonIcon';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useLocation, useHistory } from 'react-router-dom';
+import { getTokenData } from 'utils/auth';
 import { requestBackendLogin } from 'utils/requests';
 import { getAuthData, saveAuthData } from 'utils/storage';
 
@@ -17,6 +19,8 @@ type LocationState = {
 }
 
 const Login = () => {
+
+  const {setAuthContextData } = useContext(AuthContext );
 
   const [hasError, setHasError] = useState(false);
 
@@ -38,6 +42,11 @@ const Login = () => {
       console.log('TOKEN GERADO:',
       token);
       setHasError(false);
+      setAuthContextData({
+        authenticated: true,
+        tokenData: getTokenData(),
+      });
+
       history.replace(from)
     })
     .catch(error => {

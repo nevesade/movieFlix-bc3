@@ -5,12 +5,14 @@ import { useState } from 'react';
 import { AuthContext, AuthContextData } from 'AutContext';
 
 const App = () => {
- 
+  const [authContextData, setAuthContextData] = useState<AuthContextData>({
+    authenticated: false,
+  });
 
   return (
-   
+    <AuthContext.Provider value={{ authContextData, setAuthContextData }}>
       <Routes />
-    
+    </AuthContext.Provider>
   );
 };
 

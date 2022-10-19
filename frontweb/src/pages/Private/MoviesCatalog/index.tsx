@@ -1,18 +1,13 @@
 import { AxiosRequestConfig } from 'axios';
-import Navbar from 'components/Navbar';
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Movie } from 'types/movie';
-import { User } from 'types/user';
-import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
 
 
 const MovieCatalog= () => {
-  
-  const [page, setPage] = useState<SpringPage<Movie>>();
+
 
   useEffect(() => {
     const params : AxiosRequestConfig = {
@@ -26,7 +21,7 @@ const MovieCatalog= () => {
     };
 
     requestBackend(params).then((response) => {
-      setPage(response.data);
+   
       console.log(response)
 
     });
@@ -47,20 +42,10 @@ const MovieCatalog= () => {
 
               <Link className='link' to="/movies/2">Acessar /movies/2</Link>
           
-
-           
-              
           </div>
         </div>
       </div>
 
-
-      <div>
-      {page?.content.map((item) => (
-        <p key={item.id}>{item.title} {item.title}</p>
-       
-      ))}
-    </div>
     </>
   );
 };

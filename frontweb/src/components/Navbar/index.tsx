@@ -1,9 +1,46 @@
-import ButtonIcon from 'components/ButtonIcon';
-import Home from 'pages/Home';
+
+import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { isAuthenticated, getTokenData, TokenData } from 'utils/auth';
+import { removeAuthData } from 'utils/storage';
+import history from 'utils/history';
 import './styles.css';
+import { AuthContext } from 'AutContext';
+
+
+type AuthData = {
+  authenticated: boolean;
+  tokenData?: TokenData;
+};
+
 
 const Navbar = () => {
+
+  const [authData, setAuthData] = useState<AuthData>({ authenticated: false });
+
+
+
+  useEffect(() => {
+    if (isAuthenticated()) {
+      setAuthData({
+        authenticated: true,
+        tokenData: getTokenData(),
+      });
+    } else {
+      setAuthData({
+        authenticated: false,
+      });
+    }
+  }, []);
+
+  const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    removeAuthData();
+    setAuthData({
+      authenticated: false,
+    });
+    history.replace('/');
+  };
 
  
   return (
@@ -13,9 +50,24 @@ const Navbar = () => {
               <h4>MovieFlix </h4>
         </Link>
 
-        <div className='logout mb-2' >
-        <a  href='#logout'> SAIR</a>
-      </div>
+      
+        {authData.authenticated ?  (
+            <>
+               <div className='logout mb-2' >
+                
+                
+               <a href="#logout" onClick={handleLogoutClick}>
+                Sair
+              </a>
+              
+               </div>
+             
+
+            
+              
+            </>
+          )  : '' }
+    
         
       </div>
 

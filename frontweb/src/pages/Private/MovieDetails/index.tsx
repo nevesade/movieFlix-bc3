@@ -5,6 +5,7 @@ import ReviewListing from 'components/ReviewListing';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
+import { Review } from 'types/review';
 import { hasAnyRoles } from 'utils/auth';
 import {  requestBackend } from 'utils/requests';
 import './styles.css';
@@ -20,20 +21,22 @@ const MovieDetails = () => {
 
   const { movieId } = useParams<UrlParams>();
   const [movie, setMovie] = useState<Movie>();
+  const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
    
 
     const params : AxiosRequestConfig = {
       method: 'GET',
-      url: `/movies/${movieId}`,
+      url: `/movies/${movieId}/reviews`,
       withCredentials: true,
      
     };
 
     requestBackend(params).then((response) => {
-      setMovie(response.data);
-      console.log(response)
+      
+      setReviews(response.data)
+      //console.log(response)
 
     });
   }, [movieId]);
@@ -43,19 +46,19 @@ const MovieDetails = () => {
       
       <div className=" container my-4 movies-container">
         <div className="row movie-details-title-container">
-          <h1>Tela detalhes do filme id: {movie?.id} </h1>
+          <h1>Tela detalhes do filme id: {movieId} </h1>
           
         </div>
       
           <div className=" movie-details-content">
             
            { hasAnyRoles(['ROLE_MEMBER']) &&
-             <Reviewform/>
+             <Reviewform movieId= {movieId}/>
            }
            
 
             
-            <ReviewListing/>
+            <ReviewListing  />
     
        
         </div>

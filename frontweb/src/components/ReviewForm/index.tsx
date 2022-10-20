@@ -1,10 +1,17 @@
 import ButtonIcon from 'components/ButtonIcon';
 import './styles.css';
 
-const Reviewform = () => {
+
+type Props = {
+  movieId: string
+}
+const Reviewform = ({ movieId } : Props) => {
+
   return (
     <div className='  review-card review-form-card '>
       <form>
+
+    
         
         <div className=" mb-2 input-review">
           <input

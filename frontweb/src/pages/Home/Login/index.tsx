@@ -39,8 +39,8 @@ const Login = () => {
       // console.log('Sucesso', response);
       saveAuthData(response.data);
       const token = getAuthData().access_token;
-      console.log('TOKEN GERADO:',
-      token);
+      /* console.log('TOKEN GERADO:',
+      token); */
       setHasError(false);
       setAuthContextData({
         authenticated: true,

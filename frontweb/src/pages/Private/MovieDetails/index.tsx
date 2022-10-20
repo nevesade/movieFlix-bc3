@@ -1,11 +1,12 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import Navbar from 'components/Navbar';
+import  { AxiosRequestConfig } from 'axios';
+
 import Reviewform from 'components/ReviewForm';
 import ReviewListing from 'components/ReviewListing';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { BASE_URL, requestBackend } from 'utils/requests';
+import { hasAnyRoles } from 'utils/auth';
+import {  requestBackend } from 'utils/requests';
 import './styles.css';
 
 
@@ -42,17 +43,17 @@ const MovieDetails = () => {
       
       <div className=" container my-4 movies-container">
         <div className="row movie-details-title-container">
-          <h1>Tela detalhes do filme id:{movie?.id} </h1>
+          <h1>Tela detalhes do filme id: {movie?.id} </h1>
           
         </div>
       
           <div className=" movie-details-content">
             
-            <Reviewform/>
+           { hasAnyRoles(['ROLE_MEMBER']) &&
+             <Reviewform/>
+           }
            
-     
-        
-          
+
             
             <ReviewListing/>
     

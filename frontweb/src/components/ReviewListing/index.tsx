@@ -32,9 +32,9 @@ const ReviewListing = () => {
         <div className="  review-list ">
           {reviews?.map((review) => (
             <div className="mb-3">
-              <h6>
-                <span><Stars /></span>
-                {review.user.name}
+              <h6 className='mb-1 '>
+                <span ><Stars /> {review.user.name}</span>
+              
               </h6>
 
               <h5 className="review-text ">{review.text}</h5>

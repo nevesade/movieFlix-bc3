@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useLocation, useHistory } from 'react-router-dom';
 import { getTokenData } from 'utils/auth';
 import { requestBackendLogin } from 'utils/requests';
-import { getAuthData, saveAuthData } from 'utils/storage';
+import {  saveAuthData } from 'utils/storage';
 
 import './styles.css';
 
@@ -38,7 +38,7 @@ const Login = () => {
     .then((response) => {
       // console.log('Sucesso', response);
       saveAuthData(response.data);
-      const token = getAuthData().access_token;
+      //const token = getAuthData().access_token;
       /* console.log('TOKEN GERADO:',
       token); */
       setHasError(false);
@@ -54,7 +54,7 @@ const Login = () => {
       // console.log('ERRO', error);
     })
       
-    console.log(formData);
+    //console.log(formData);
   };
 
   return (

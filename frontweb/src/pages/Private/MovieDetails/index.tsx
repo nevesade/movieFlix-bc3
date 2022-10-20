@@ -4,7 +4,6 @@ import Reviewform from 'components/ReviewForm';
 import ReviewListing from 'components/ReviewListing';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Movie } from 'types/movie';
 import { Review } from 'types/review';
 import { hasAnyRoles } from 'utils/auth';
 import {  requestBackend } from 'utils/requests';
@@ -20,7 +19,6 @@ type UrlParams = {
 const MovieDetails = () => {
 
   const { movieId } = useParams<UrlParams>();
-  const [movie, setMovie] = useState<Movie>();
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
@@ -33,13 +31,21 @@ const MovieDetails = () => {
      
     };
 
-    requestBackend(params).then((response) => {
+    requestBackend(params)
+    .then((response) => {
       
-      setReviews(response.data)
+      setReviews(response.data);
       //console.log(response)
 
     });
   }, [movieId]);
+
+  const handleInsertReview = (review: Review) => {
+    const clone = [ ...reviews];
+    clone.push(review);
+    setReviews(clone);
+
+  }
 
   return (
     <>
@@ -53,12 +59,12 @@ const MovieDetails = () => {
           <div className=" movie-details-content">
             
            { hasAnyRoles(['ROLE_MEMBER']) &&
-             <Reviewform movieId= {movieId}/>
+             <Reviewform movieId= {movieId}  onInsertReview={handleInsertReview } />
            }
            
 
             
-            <ReviewListing  />
+            <ReviewListing reviews = {reviews}  />
     
        
         </div>

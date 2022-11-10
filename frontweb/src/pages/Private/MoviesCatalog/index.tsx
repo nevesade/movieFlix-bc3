@@ -1,8 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
-import {  useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Movie } from 'types/movie';
+import Pagination from 'components/Pagination';
+import {  useEffect } from 'react';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
@@ -58,6 +57,10 @@ const MovieCatalog= () => {
               <Link className='link' to="/movies/2">Acessar /movies/2</Link>
            */}
           
+        </div>
+
+        <div className='row'>
+          <Pagination/>
         </div>
       </div>
 

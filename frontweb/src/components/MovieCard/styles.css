@@ -1,0 +1,49 @@
+.movie-card {
+
+    width: 258px;
+    height: 322px;
+    background: #6C6C6C;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    margin: 20px;
+    padding: 0px;
+}
+
+
+.card-top-container {
+    margin-top: 26px;
+}
+
+.card-top-container img {
+    width: 258px;
+}
+
+.card-bottom-container {
+    padding: 15px 20px 30px;
+    
+}
+
+.card-bottom-container h6 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+.card-bottom-container span {
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFC700;
+    mix-blend-mode: normal;
+}
+
+.card-bottom-container p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+}

@@ -1,12 +1,15 @@
 import { AxiosRequestConfig } from 'axios';
-import {  useEffect } from 'react';
+import MovieCard from 'components/MovieCard';
+import {  useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Movie } from 'types/movie';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
 
 
 const MovieCatalog= () => {
+  
 
 
   useEffect(() => {
@@ -20,9 +23,16 @@ const MovieCatalog= () => {
       },
     };
 
-    requestBackend(params).then((response) => {
+    requestBackend(params)
+    .then((response) => {
+
+     
+      
+        
+        //console.log(response)
+  
    
-      //console.log(response)
+      console.log(response)
 
     });
   }, []);
@@ -36,13 +46,18 @@ const MovieCatalog= () => {
           <h1>Tela listagem de filmes</h1>
         </div>
         <div className="row ">
-          <div className="movie-content">
+          
+
+            <MovieCard/>
+            <MovieCard/>
+            <MovieCard/>
+            <MovieCard/>
             
-              <Link className='link' to="/movies/1">Acessar /movies/1</Link>
+              {/* <Link className='link' to="/movies/1">Acessar /movies/1</Link>
 
               <Link className='link' to="/movies/2">Acessar /movies/2</Link>
+           */}
           
-          </div>
         </div>
       </div>
 

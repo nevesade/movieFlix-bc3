@@ -1,12 +1,19 @@
+import { useEffect, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
 import MovieFilter from 'components/MovieFilter';
 import Pagination from 'components/Pagination';
-import { useEffect } from 'react';
+import { Movie } from 'types/movie';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
+import {SpringPage} from 'types/vendor/spring';
+import { Link } from 'react-router-dom';
 
 const MovieCatalog = () => {
+
+  const [page, setPage] = useState<SpringPage<Movie>>();
+  
+
   useEffect(() => {
     const params: AxiosRequestConfig = {
       method: 'GET',
@@ -14,12 +21,14 @@ const MovieCatalog = () => {
       withCredentials: true,
       params: {
         page: 0,
-        size: 12,
+        size: 4,
       },
     };
 
-    requestBackend(params).then((response) => {
-      //console.log(response)
+    requestBackend(params)
+    .then((response) => {
+
+      setPage(response.data);
 
       console.log(response);
     });
@@ -31,14 +40,19 @@ const MovieCatalog = () => {
         <MovieFilter />
 
         <div className="row  ">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+          {
+            page?.content.map((movie) => (
+
+              <div className='col-sm-6 col-lg-4 col-xl-3' key={movie.id}>
+                <Link className='link' to="/movies/1">
+                  <MovieCard movie={movie} />
+                </Link>
+              </div>
+            ))
+
+          }
+
+         
 
           {/* <Link className='link' to="/movies/1">Acessar /movies/1</Link>
 
@@ -55,3 +69,4 @@ const MovieCatalog = () => {
 };
 
 export default MovieCatalog;
+

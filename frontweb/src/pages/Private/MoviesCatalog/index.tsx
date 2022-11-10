@@ -1,5 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
+import MovieFilter from 'components/MovieFilter';
 import Pagination from 'components/Pagination';
 import {  useEffect } from 'react';
 import { requestBackend } from 'utils/requests';
@@ -39,14 +40,21 @@ const MovieCatalog= () => {
 
   return (
     <>
-      
-      <div className=" container my-4 movies-container">
-        <div className="row movies-title-container">
-          <h1>Tela listagem de filmes</h1>
-        </div>
-        <div className="row ">
-          
+      <div className=" container my-4 ">
 
+      
+       <MovieFilter/>
+     
+
+      
+
+        
+
+
+        
+        <div className="row    ">
+          
+        
             <MovieCard/>
             <MovieCard/>
             <MovieCard/>

@@ -1,0 +1,40 @@
+.filter {
+    
+    background: #6C6C6C;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    Height:80px;
+    padding: 15px 20px;
+   
+}
+
+.movie-filter-select__single-value {
+
+    color: #fff !important;
+}
+
+.movie-filter-select__control {
+    background-color: #6C6C6C !important;
+    width: 260px;
+    height: 50px;
+    border-radius: 10px !important;
+    color: #fff;
+   
+    margin-top: 5 ;
+}
+
+.movie-filter-select__menu {
+    background-color: #6C6C6C  !important;
+    width: 260px !important;   
+}
+
+
+
+.movie-filter-select__placeholder {
+    color: #9E9E9E !important;
+  }
+
+  .movie-filter-select__indicator-separator {
+    display: none;
+  }
+  

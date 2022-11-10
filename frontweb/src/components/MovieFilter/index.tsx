@@ -12,7 +12,7 @@ const MovieFilter = () => {
   ]
 
     return(
-        <div className="   container filter ">
+        <div className="  conatainer filter ">
                 <div className="filter-select">
                <Select
                 options={options}

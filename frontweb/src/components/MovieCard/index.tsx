@@ -10,7 +10,7 @@ type Props = {
 const MovieCard = ({ movie } : Props) => {
  
   return (
-    <div className=" movie-card container ">
+    <div className=" movie-card  ">
       <div className="card-top  ">
         <img src={movie.imgUrl} alt="{movie.title}" />
       </div>

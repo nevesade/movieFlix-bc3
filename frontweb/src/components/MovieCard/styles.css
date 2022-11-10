@@ -1,6 +1,6 @@
 .movie-card {
 
-    width: auto;
+    width: 258px;
     height: 322px;
     background: #6C6C6C;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
@@ -17,7 +17,7 @@
 }
 
 .card-top img {
-    width: 290px;
+    width: 258px;
 }
 
 .card-bottom-container {

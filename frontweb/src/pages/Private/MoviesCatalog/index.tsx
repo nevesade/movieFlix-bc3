@@ -2,18 +2,13 @@ import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
 import MovieFilter from 'components/MovieFilter';
 import Pagination from 'components/Pagination';
-import {  useEffect } from 'react';
+import { useEffect } from 'react';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
 
-
-
-const MovieCatalog= () => {
-  
-
-
+const MovieCatalog = () => {
   useEffect(() => {
-    const params : AxiosRequestConfig = {
+    const params: AxiosRequestConfig = {
       method: 'GET',
       url: '/movies',
       withCredentials: true,
@@ -23,55 +18,38 @@ const MovieCatalog= () => {
       },
     };
 
-    requestBackend(params)
-    .then((response) => {
+    requestBackend(params).then((response) => {
+      //console.log(response)
 
-     
-      
-        
-        //console.log(response)
-  
-   
-      console.log(response)
-
+      console.log(response);
     });
   }, []);
-
 
   return (
     <>
       <div className=" container my-4 ">
+        <MovieFilter />
 
-      
-       <MovieFilter/>
-     
+        <div className="row  ">
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
 
-      
-
-        
-
-
-        
-        <div className="row    ">
-          
-        
-            <MovieCard/>
-            <MovieCard/>
-            <MovieCard/>
-            <MovieCard/>
-            
-              {/* <Link className='link' to="/movies/1">Acessar /movies/1</Link>
+          {/* <Link className='link' to="/movies/1">Acessar /movies/1</Link>
 
               <Link className='link' to="/movies/2">Acessar /movies/2</Link>
            */}
-          
         </div>
 
-        <div className='row'>
-          <Pagination/>
+        <div className="row">
+          <Pagination />
         </div>
       </div>
-
     </>
   );
 };

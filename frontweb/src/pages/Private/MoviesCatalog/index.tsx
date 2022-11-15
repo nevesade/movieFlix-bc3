@@ -12,6 +12,38 @@ import { Link } from 'react-router-dom';
 const MovieCatalog = () => {
 
   const [page, setPage] = useState<SpringPage<Movie>>();
+
+
+  const getMovies = (pageNumber : number) =>{
+
+    const params: AxiosRequestConfig = {
+      method: 'GET',
+      url: "/movies",
+      withCredentials: true,
+      params: {
+        page: pageNumber,
+        size: 4,
+      },
+
+
+    };
+
+    
+    requestBackend(params).then((response) => {
+      setPage(response.data);
+      console.log(page);
+    }).finally(() => {
+      console.log("Error");
+    }
+
+    )
+
+  }
+
+  useEffect(() => {
+   getMovies(0)
+  }, []);
+/*
   
 
   useEffect(() => {
@@ -33,6 +65,8 @@ const MovieCatalog = () => {
       console.log(response);
     });
   }, []);
+
+  */
 
   return (
     <>
@@ -63,7 +97,11 @@ const MovieCatalog = () => {
         </div>
 
         <div className="row">
-          <Pagination />
+        <Pagination 
+            pageCount={(page) ? page.totalPages : 0}
+            range= {3} 
+            onChange={getMovies}
+            />
         </div>
       </div>
     </>

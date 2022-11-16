@@ -21,7 +21,7 @@ const Routes = () => (
         </Route>
 
         <Route path="/movies/:movieId">
-          <MovieDetails />
+          <MovieDetails  />
         </Route>
 
         </PrivateRoute>

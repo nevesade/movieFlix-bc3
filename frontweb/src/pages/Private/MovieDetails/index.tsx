@@ -1,72 +1,79 @@
-import  { AxiosRequestConfig } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 
 import Reviewform from 'components/ReviewForm';
 import ReviewListing from 'components/ReviewListing';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Movie } from 'types/movie';
 import { Review } from 'types/review';
+
 import { hasAnyRoles } from 'utils/auth';
-import {  requestBackend } from 'utils/requests';
+import { requestBackend } from 'utils/requests';
 import './styles.css';
 
-
 type UrlParams = {
-
   movieId: string;
-}
-
+};
 
 const MovieDetails = () => {
-
   const { movieId } = useParams<UrlParams>();
+  const [movie, setMovie] = useState<Movie>();
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
-   
-
-    const params : AxiosRequestConfig = {
+    const params: AxiosRequestConfig = {
       method: 'GET',
       url: `/movies/${movieId}/reviews`,
       withCredentials: true,
-     
     };
 
-    requestBackend(params)
-    .then((response) => {
-      
+    requestBackend(params).then((response) => {
       setReviews(response.data);
-      //console.log(response)
-
+      console.log('AVALIAÇÕES: ', response);
     });
+
+    const config: AxiosRequestConfig = {
+      method: 'GET',
+      url: `/movies/${movieId}`,
+      withCredentials: true,
+    };
+
+    requestBackend(config).then((response) => {
+      //console.log(response)
+      requestBackend(config).then((response) => {
+        setMovie(response.data);
+
+        console.log('MEU UNICO FILME ', response);
+        console.log('Movie detalhes', movie);
+      });
+    });
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
   const handleInsertReview = (review: Review) => {
-    const clone = [ ...reviews];
+    const clone = [...reviews];
     clone.push(review);
     setReviews(clone);
-
-  }
+  };
 
   return (
     <>
-      
       <div className=" container my-4 movies-container">
         <div className="row movie-details-title-container">
           <h1>Tela detalhes do filme id: {movieId} </h1>
-          
-        </div>
-      
-          <div className=" movie-details-content">
-            
-           { hasAnyRoles(['ROLE_MEMBER']) &&
-             <Reviewform movieId= {movieId}  onInsertReview={handleInsertReview } />
-           }
-           
 
-            
-            <ReviewListing reviews = {reviews}  />
-    
-       
+          {movie?.synopsis}
+
+          <div></div>
+        </div>
+
+        <div className=" movie-details-content">
+          {hasAnyRoles(['ROLE_MEMBER']) && (
+            <Reviewform movieId={movieId} onInsertReview={handleInsertReview} />
+          )}
+
+          <ReviewListing reviews={reviews} />
         </div>
       </div>
     </>

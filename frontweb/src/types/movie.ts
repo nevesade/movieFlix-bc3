@@ -5,6 +5,7 @@ export type Movie = {
     subTitle: string,
     imgUrl: string,
     year: number,
+    synopsis?: string
     
       
 }

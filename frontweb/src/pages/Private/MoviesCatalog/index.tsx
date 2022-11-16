@@ -6,131 +6,84 @@ import Pagination from 'components/Pagination';
 import { Movie } from 'types/movie';
 import { requestBackend } from 'utils/requests';
 import './styles.css';
-import {SpringPage} from 'types/vendor/spring';
+import { SpringPage } from 'types/vendor/spring';
 import { Link } from 'react-router-dom';
 
-
-type ControlComponentsData =  {
+type ControlComponentsData = {
   activePage: number;
   filterData: MovieFilterData;
-}
-
-
-const MovieCatalog = () => {
-
-  const [page, setPage] = useState<SpringPage<Movie>>();
-
-  const [controlComponentsData, setControlComponentsData] = useState<ControlComponentsData>( 
-    {
-
-        activePage: 0,
-        filterData: {name: "", genre: null},
-
-    }
-);
-
-const handlePageChange = (pageNumber : number) => {
-  setControlComponentsData({activePage: pageNumber, filterData:  controlComponentsData.filterData});
 };
 
-const handleSubmitFilter = (data: MovieFilterData) => {
-  setControlComponentsData({activePage: 0, filterData: data });
-}
+const MovieCatalog = () => {
+  const [page, setPage] = useState<SpringPage<Movie>>();
 
+  const [controlComponentsData, setControlComponentsData] =
+    useState<ControlComponentsData>({
+      activePage: 0,
+      filterData: { name: '', genre: null },
+    });
 
+  const handlePageChange = (pageNumber: number) => {
+    setControlComponentsData({
+      activePage: pageNumber,
+      filterData: controlComponentsData.filterData,
+    });
+  };
+
+  const handleSubmitFilter = (data: MovieFilterData) => {
+    setControlComponentsData({ activePage: 0, filterData: data });
+  };
 
   const getMovies = useCallback(() => {
-
     const config: AxiosRequestConfig = {
       method: 'GET',
-      url: "/movies",
+      url: '/movies',
       withCredentials: true,
       params: {
         page: controlComponentsData.activePage,
         size: 4,
         name: controlComponentsData.filterData.name,
-        genreId: controlComponentsData.filterData.genre?.id
+        genreId: controlComponentsData.filterData.genre?.id,
       },
-
-
     };
 
-    
-    requestBackend(config).then((response) => {
-      setPage(response.data);
-      console.log(page);
-    }).finally(() => {
-      console.log("Error");
-    }
+    requestBackend(config)
+      .then((response) => {
+        setPage(response.data);
+        console.log(page);
+      })
+      .finally(() => {
+        console.log('Error');
+      });
 
-    )
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[controlComponentsData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [controlComponentsData]);
 
   useEffect(() => {
-   getMovies()
-  
+    getMovies();
   }, [getMovies]);
-/*
-  
-
-  useEffect(() => {
-    const params: AxiosRequestConfig = {
-      method: 'GET',
-      url: '/movies',
-      withCredentials: true,
-      params: {
-        page: 0,
-        size: 4,
-      },
-    };
-
-    requestBackend(params)
-    .then((response) => {
-
-      setPage(response.data);
-
-      console.log(response);
-    });
-  }, []);
-
-  */
 
   return (
     <>
       <div className=" container my-4  ">
-      
         <MovieFilter onSubmitFilter={handleSubmitFilter} />
-       
 
         <div className="row container ">
-          {
-            page?.content.map((movie) => (
-
-              <div className='col-sm-6  col-lg-4 col-xl-3  ' key={movie.id}>
-                <Link className='link' to="/movies/1">
-                  <MovieCard movie={movie} />
-                </Link>
-              </div>
-            ))
-
-          }
-
-         
-
-          {/* <Link className='link' to="/movies/1">Acessar /movies/1</Link>
-
-              <Link className='link' to="/movies/2">Acessar /movies/2</Link>
-           */}
+          {page?.content.map((movie) => (
+            <div className="col-sm-6  col-lg-4 col-xl-3  " key={movie.id}>
+              <Link className="link" to={`/movies/${movie.id}`}>
+                <MovieCard movie={movie} />
+              </Link>
+            </div>
+          ))}
         </div>
 
         <div className="row">
-        <Pagination 
-            pageCount={(page) ? page.totalPages : 0}
-            range= {3} 
+          <Pagination
+            pageCount={page ? page.totalPages : 0}
+            range={3}
             onChange={handlePageChange}
-            />
+          />
         </div>
       </div>
     </>
@@ -138,4 +91,3 @@ const handleSubmitFilter = (data: MovieFilterData) => {
 };
 
 export default MovieCatalog;
-

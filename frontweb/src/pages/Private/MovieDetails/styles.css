@@ -1,4 +1,56 @@
 .movie-details-title-container h1{
-    font-weight: bold
-    ;
+    font-weight: bold;
+    
+    
+}
+.movie-details-content {
+    padding: 0px;
+}
+
+.details-card {
+
+    background: #6C6C6C;
+    padding: 40px;
+    margin: 0 ;
+    
+    
+}
+
+
+.img-container img {
+
+    width: 500px;
+    height: 314.23px;
+}
+
+
+
+.card-bottom-container {
+    padding: 15px 20px 30px;
+    
+}
+
+.card-bottom-container h6 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+
+.card-bottom-container span {
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    color: #FFC700;
+    mix-blend-mode: normal;
+}
+
+.card-bottom-container p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
 }

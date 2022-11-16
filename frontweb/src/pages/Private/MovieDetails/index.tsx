@@ -48,7 +48,7 @@ const MovieDetails = () => {
       });
     });
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [movieId]);
 
   const handleInsertReview = (review: Review) => {
@@ -60,13 +60,37 @@ const MovieDetails = () => {
   return (
     <>
       <div className=" container my-4 movies-container">
-        <div className="row movie-details-title-container">
-          <h1>Tela detalhes do filme id: {movieId} </h1>
+        
+         
 
-          {movie?.synopsis}
+          <div className="row details-card ">
+            <div className="col-xl-6">
+              <div className="img-container">
+                <img src={movie?.imgUrl} alt={movie?.title} />
+              </div>
+            </div>
+            <div className="col-xl-6">
+              <div className="card-bottom-container">
+                <h6>{movie?.title}</h6>
+                <span>{movie?.year}</span>
+                <p>{movie?.subTitle}</p>
 
-          <div></div>
-        </div>
+                
+                  <div className="  review-list ">
+                    <div className="mb-3">
+                     
+                         
+
+                          <h5 className="review-text ">{movie?.synopsis}</h5>
+                        
+                      
+                    </div>
+                  </div>
+               
+              </div>
+            </div>
+          </div>
+       
 
         <div className=" movie-details-content">
           {hasAnyRoles(['ROLE_MEMBER']) && (

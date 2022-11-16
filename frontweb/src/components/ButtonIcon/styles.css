@@ -14,6 +14,12 @@
 
 }
 
+.btn-primary {
+    background: #FFC700; 
+}
+
+
+
 .btn-container button {
     border-radius: 4px;
     width: 100%;

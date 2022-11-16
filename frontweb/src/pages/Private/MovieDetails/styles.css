@@ -1,8 +1,9 @@
-.movie-details-title-container h1{
+.movie-details-title-container h1 {
     font-weight: bold;
-    
-    
+
+
 }
+
 .movie-details-content {
     padding: 0px;
 }
@@ -11,9 +12,9 @@
 
     background: #6C6C6C;
     padding: 40px;
-    margin: 0 ;
-    
-    
+    margin: 0;
+
+
 }
 
 
@@ -27,7 +28,7 @@
 
 .card-bottom-container {
     padding: 15px 20px 30px;
-    
+
 }
 
 .card-bottom-container h6 {
@@ -54,3 +55,74 @@
     letter-spacing: -0.015em;
     color: #FFFFFF;
 }
+
+
+
+@media (min-width: 320px) {
+
+
+    .details-card {
+
+        padding: unset;
+        
+
+    }
+
+    .img-container img {
+
+        margin-top: 20px;
+        width: 235px;
+        height: 163px;
+       
+
+    }
+
+
+}
+
+@media (min-width: 576px) {
+    
+    .img-container img {
+
+        margin-top: 20px;
+        width: 459px;
+        height: 311px;
+
+    }
+
+
+}
+
+
+@media (min-width: 768px) {
+    
+    .img-container img {
+
+        margin: 20px;
+        width: 632px;
+        height: 382.48px;
+       
+
+    }
+
+
+}
+
+
+@media (min-width: 992px)  {
+
+    .img-container img {
+
+        margin: 20px;
+        width: 500px;
+        height: 314.48px;
+       
+
+    }
+
+}
+
+
+
+
+

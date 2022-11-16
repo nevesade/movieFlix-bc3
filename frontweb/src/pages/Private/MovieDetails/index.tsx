@@ -59,14 +59,14 @@ const MovieDetails = () => {
 
   return (
     <>
-      <div className=" container my-4 movies-container">
+      <div className=" container my-5 movies-container">
         
          
 
           <div className="row details-card ">
-            <div className="col-xl-6">
+            <div className="col-xl-6 ">
               <div className="img-container">
-                <img src={movie?.imgUrl} alt={movie?.title} />
+                <img className='mx-auto d-block' src={movie?.imgUrl} alt={movie?.title} />
               </div>
             </div>
             <div className="col-xl-6">
@@ -92,7 +92,7 @@ const MovieDetails = () => {
           </div>
        
 
-        <div className=" movie-details-content">
+        <div className=" movie-details-content my-5">
           {hasAnyRoles(['ROLE_MEMBER']) && (
             <Reviewform movieId={movieId} onInsertReview={handleInsertReview} />
           )}
